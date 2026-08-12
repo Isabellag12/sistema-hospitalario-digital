@@ -57,6 +57,36 @@ El proyecto incluye los siguientes modulos:
 - Resultados de laboratorio.
 - Usuarios y autenticacion.
 
+### 3.1 Descripcion del problema
+
+Las instituciones de salud manejan informacion relacionada con pacientes, citas medicas, historias clinicas, atenciones y resultados de laboratorio.
+
+Cuando estos procesos se encuentran separados o se gestionan mediante diferentes medios, pueden presentarse dificultades para consultar la informacion de manera oportuna, mantener la relacion entre los datos del paciente y controlar el acceso a la informacion clinica.
+
+El Sistema Hospitalario Digital busca centralizar estos procesos dentro de una misma solucion, permitiendo organizar la informacion del paciente y facilitar las operaciones realizadas por el personal autorizado.
+
+### 3.2 Stakeholders
+
+Los principales interesados en el Sistema Hospitalario Digital son:
+
+- Paciente: persona que recibe los servicios de salud y cuya informacion se administra en el sistema.
+- Medico: profesional que consulta informacion clinica, registra atenciones y genera ordenes de laboratorio.
+- Personal administrativo: encargado del registro de pacientes y la gestion de citas medicas.
+- Personal de laboratorio: encargado de registrar los resultados relacionados con las ordenes de laboratorio.
+- Administrador del sistema: encargado de gestionar los usuarios y el acceso al sistema.
+- Institucion de salud: organizacion responsable de utilizar y administrar el sistema.
+
+### 3.3 Modulos funcionales
+
+El Sistema Hospitalario Digital se organiza en los siguientes modulos:
+
+- Gestion de pacientes.
+- Gestion de citas medicas.
+- Gestion de historias clinicas.
+- Gestion de atenciones medicas.
+- Gestion de laboratorio.
+- Gestion de usuarios y autenticacion.
+
 ### 4. Organizacion de la arquitectura
 
 El sistema se divide en cuatro capas principales:
@@ -326,7 +356,7 @@ El modulo de laboratorio se mantiene separado para facilitar una futura integrac
 Los requisitos principales se relacionan con los componentes de la siguiente manera:
 
 | Requisito | Componente principal |
-|---|---|
+| --- | --- |
 | RF-01 Registrar paciente | PacienteService |
 | RF-02 Consultar paciente | PacienteRepository |
 | RF-03 Programar cita | CitaMedicaService |
