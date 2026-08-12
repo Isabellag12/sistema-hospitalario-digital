@@ -2,6 +2,18 @@
 
 ## Sistema Hospitalario Digital
 
+### Universidad de Manizales
+**Asignatura:** Arquitectura de Software
+
+**Integrantes:**
+- Maria Isabella Ramirez Giraldo
+- Mariana Manrique Martinez
+- Mateo Bedoya Castillo
+- Juan Sebastian Garcia
+
+**Año:** 2026
+
+
 ### 1. Introduccion
 
 Este documento presenta la arquitectura propuesta para el Sistema Hospitalario Digital.
