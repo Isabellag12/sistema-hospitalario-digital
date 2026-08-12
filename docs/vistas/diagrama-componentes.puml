@@ -1,0 +1,65 @@
+@startuml componentes
+
+title Diagrama de Componentes - Sistema Hospitalario Digital
+
+left to right direction
+
+package "Presentacion" {
+    [main.ts] as Main
+}
+
+package "Aplicacion" {
+    [PacienteService] as PS
+    [CitaMedicaService] as CS
+    [HistoriaClinicaService] as HS
+    [AtencionMedicaService] as AS
+    [OrdenLaboratorioService] as OS
+    [ResultadoLaboratorioService] as RS
+    [UsuarioService] as US
+}
+
+package "Dominio" {
+    interface PacienteRepository
+    interface CitaMedicaRepository
+    interface HistoriaClinicaRepository
+    interface AtencionMedicaRepository
+    interface OrdenLaboratorioRepository
+    interface ResultadoLaboratorioRepository
+    interface UsuarioRepository
+}
+
+package "Infraestructura" {
+    [PacienteRepositoryMemoria] as PRM
+    [CitaMedicaRepositoryMemoria] as CRM
+    [HistoriaClinicaRepositoryMemoria] as HRM
+    [AtencionMedicaRepositoryMemoria] as ARM
+    [OrdenLaboratorioRepositoryMemoria] as ORM
+    [ResultadoLaboratorioRepositoryMemoria] as RRM
+    [UsuarioRepositoryMemoria] as URM
+}
+
+Main --> PS
+Main --> CS
+Main --> HS
+Main --> AS
+Main --> OS
+Main --> RS
+Main --> US
+
+PS --> PacienteRepository
+CS --> CitaMedicaRepository
+HS --> HistoriaClinicaRepository
+AS --> AtencionMedicaRepository
+OS --> OrdenLaboratorioRepository
+RS --> ResultadoLaboratorioRepository
+US --> UsuarioRepository
+
+PRM ..|> PacienteRepository
+CRM ..|> CitaMedicaRepository
+HRM ..|> HistoriaClinicaRepository
+ARM ..|> AtencionMedicaRepository
+ORM ..|> OrdenLaboratorioRepository
+RRM ..|> ResultadoLaboratorioRepository
+URM ..|> UsuarioRepository
+
+@enduml

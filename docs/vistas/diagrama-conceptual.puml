@@ -1,0 +1,84 @@
+@startuml conceptual
+
+title Diagrama Conceptual - Sistema Hospitalario Digital
+
+class Paciente {
+    id
+    documento
+    nombres
+    apellidos
+    fechaNacimiento
+    telefono
+    correo
+}
+
+class CitaMedica {
+    id
+    pacienteId
+    medicoId
+    fecha
+    motivo
+    estado
+}
+
+class HistoriaClinica {
+    id
+    pacienteId
+    fechaCreacion
+}
+
+class AtencionMedica {
+    id
+    historiaClinicaId
+    medicoId
+    fecha
+    motivoConsulta
+    diagnostico
+    observaciones
+}
+
+class OrdenLaboratorio {
+    id
+    pacienteId
+    medicoId
+    examen
+    fecha
+    estado
+}
+
+class ResultadoLaboratorio {
+    id
+    ordenLaboratorioId
+    resultado
+    fechaResultado
+}
+
+class ProfesionalSalud {
+    id
+    nombres
+    apellidos
+    especialidad
+    registroProfesional
+}
+
+class Usuario {
+    id
+    nombreUsuario
+    contrasena
+    rol
+    activo
+}
+
+Paciente "1" -- "0..*" CitaMedica
+Paciente "1" -- "1" HistoriaClinica
+HistoriaClinica "1" -- "0..*" AtencionMedica
+Paciente "1" -- "0..*" OrdenLaboratorio
+OrdenLaboratorio "1" -- "0..1" ResultadoLaboratorio
+
+ProfesionalSalud "1" -- "0..*" CitaMedica
+ProfesionalSalud "1" -- "0..*" AtencionMedica
+ProfesionalSalud "1" -- "0..*" OrdenLaboratorio
+
+Usuario --> ProfesionalSalud : puede representar
+
+@enduml

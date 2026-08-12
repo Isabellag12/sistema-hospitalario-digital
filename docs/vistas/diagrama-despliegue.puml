@@ -1,0 +1,31 @@
+@startuml despliegue
+
+title Diagrama de Despliegue - Sistema Hospitalario Digital
+
+node "Computador del Usuario" {
+
+    node "Entorno Node.js" {
+
+        artifact "Sistema Hospitalario Digital" {
+            component "Presentacion"
+            component "Aplicacion"
+            component "Dominio"
+            component "Infraestructura"
+        }
+
+        component "Repositorios en Memoria"
+    }
+}
+
+component "TypeScript" as TS
+
+TS --> "Sistema Hospitalario Digital" : Compilacion
+"Sistema Hospitalario Digital" --> "Repositorios en Memoria" : Almacena datos temporalmente
+
+note right of "Repositorios en Memoria"
+Los datos se mantienen
+durante la ejecucion
+del prototipo
+end note
+
+@enduml

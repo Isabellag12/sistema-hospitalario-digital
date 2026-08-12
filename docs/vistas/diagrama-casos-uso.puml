@@ -1,0 +1,47 @@
+@startuml  casosuso
+
+title Casos de Uso - Sistema Hospitalario Digital
+
+left to right direction
+
+actor Paciente
+actor Medico
+actor "Personal Administrativo" as Administrativo
+actor "Personal de Laboratorio" as Laboratorio
+actor Administrador
+
+rectangle "Sistema Hospitalario Digital" {
+
+    usecase "Registrar paciente" as UC1
+    usecase "Consultar paciente" as UC2
+    usecase "Programar cita medica" as UC3
+    usecase "Cancelar cita medica" as UC4
+    usecase "Crear historia clinica" as UC5
+    usecase "Registrar atencion medica" as UC6
+    usecase "Crear orden de laboratorio" as UC7
+    usecase "Registrar resultado\nde laboratorio" as UC8
+    usecase "Registrar usuario" as UC9
+    usecase "Autenticar usuario" as UC10
+}
+
+Administrativo --> UC1
+Administrativo --> UC2
+Administrativo --> UC3
+Administrativo --> UC4
+Administrativo --> UC5
+
+Medico --> UC2
+Medico --> UC5
+Medico --> UC6
+Medico --> UC7
+Medico --> UC10
+
+Laboratorio --> UC8
+Laboratorio --> UC10
+
+Administrador --> UC9
+Administrador --> UC10
+
+Paciente --> UC3
+
+@enduml

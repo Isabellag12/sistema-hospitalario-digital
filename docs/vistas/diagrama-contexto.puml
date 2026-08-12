@@ -1,0 +1,25 @@
+@startuml contexto
+
+title Diagrama de Contexto - Sistema Hospitalario Digital
+
+left to right direction
+
+actor Paciente
+actor Medico
+actor "Personal Administrativo" as Administrativo
+actor "Personal de Laboratorio" as Laboratorio
+actor Administrador
+
+rectangle "Sistema Hospitalario Digital" as Sistema
+
+Paciente --> Sistema : Informacion personal\ny servicios de salud
+
+Medico --> Sistema : Consulta historia clinica\nRegistra atencion\nSolicita examenes
+
+Administrativo --> Sistema : Registra pacientes\nGestiona citas
+
+Laboratorio --> Sistema : Consulta ordenes\nRegistra resultados
+
+Administrador --> Sistema : Gestiona usuarios\ny acceso
+
+@enduml
